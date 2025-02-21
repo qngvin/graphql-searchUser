@@ -16,7 +16,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 const httpLink = new HttpLink({
   uri: GITHUB_GRAPHQL_API,
   headers: {
-    Auhorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
+    Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
   }
 })
 const link = ApolloLink.from([errorLink, httpLink])
